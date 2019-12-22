@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-model href="http://docbook.org/xml/5.0/rng/docbook.rng" schematypens="http://relaxng.org/ns/structure/1.0"?>
+<?xml-model href="http://docbook.org/xml/5.0/rng/docbook.rng" type="application/xml" schematypens="http://purl.oclc.org/dsdl/schematron"?>
+<book xmlns="http://docbook.org/ns/docbook"
+    xmlns:xlink="http://www.w3.org/1999/xlink" version="5.0">
+    <info>
+        <title>Hextris            </title>
+        <author>
+            <email><link xlink:href="mailto:ir0n1ng@mail.ru">ir0n1ng@mail.ru</link></email>
+        </author>
+    </info>
+    <part>
+        <chapter>
+            <title>About</title>
+            <para>An addictive puzzle game inspired by Tetris.</para>
+            <para>Hextris was created by a group of high school friends in 2014.</para>
+        </chapter>
+        <chapter>
+            <title>License</title>
+            <para>This program is free software: you can redistribute it and/or modify</para>
+            <para>it under the terms of the GNU General Public License as published by</para>
+            <para>the Free Software Foundation, either version 3 of the License, or</para>
+            <para>(at your option) any later version.</para>
+            <para>This program is distributed in the hope that it will be useful,</para>
+            <para>but WITHOUT ANY WARRANTY; without even the implied warranty of</para>
+            <para>MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the</para>
+            <para>GNU General Public License for more details.</para>
+            <para>You should have received a copy of the GNU General Public License</para>
+            <para>along with this program. If not, see &lt;https://www.gnu.org/licenses/>.</para>
+        </chapter>
+        <chapter>
+            <title>Code samples</title>
+            <para>First code sample is for creating random <code>return Math.floor((Math.random() *
+                    max) + min);</code></para>
+            <para>Second code sample checks is game state is saved <code>return
+                    localStorage.getItem("saveState") != "{}" &amp;&amp;
+                    localStorage.getItem("saveState") != undefined;</code></para>
+            <para>Last code sample is secret<code>window.colors = ["#e74c3c", "#f1c40f", "#3498db",
+                    "#2ecc71"];</code></para>
+        </chapter>
+    </part>
+</book>
