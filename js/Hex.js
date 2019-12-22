@@ -1,3 +1,11 @@
+/**
+* Работа с Hex
+*
+* C помощью длины стороны создаем блок
+* инициализируем все его параметры
+* @param int $sideLength Длина стороны
+* @return Hex Возвращает блок
+*/
 function Hex(sideLength) {
 	this.playThrough = 0;
 	this.fillColor = [44,62,80];
@@ -25,6 +33,14 @@ function Hex(sideLength) {
 		this.blocks.push([]);
 	}
 
+/**
+* Работа с Hex
+*
+* Трясем Hex
+
+* @param Hex $obj Hex
+* @return Hex Возвращает блок
+*/
 	this.shake = function(obj) { //lane as in particle lane
 		var angle = 30 + obj.lane * 60;
 		angle *= Math.PI / 180;
@@ -41,7 +57,14 @@ function Hex(sideLength) {
 			}
 		}
 	};
-
+/**
+* Работа с Hex
+*
+* Добавляем новый block
+* 
+* @param Hex $block Hex
+* @return Hex Возвращает блок
+*/
 	this.addBlock = function(block) {
 		if (!(gameState == 1 || gameState === 0)) return;
 		block.settled = 1;
@@ -55,7 +78,16 @@ function Hex(sideLength) {
 		block.attachedLane = lane;
 		block.checked = 1;
 	};
-
+/**
+* Работа с Hex
+*
+* Проверяем коллизию
+* 
+* @param Hex $block Hex
+* @param int $position Позиция
+* @param array $tArr массив блоков
+* @return bool была ли коллизия
+*/
 	this.doesBlockCollide = function(block, position, tArr) {
 		if (block.settled) {
 			return;
@@ -103,7 +135,14 @@ function Hex(sideLength) {
 			}
 		}
 	};
-
+/**
+* Работа с Hex
+*
+* Поворачиваем блок на шаг
+* 
+* @param int $steps шаги
+* @return Hex Возвращает блок
+*/
 	this.rotate = function(steps) {
 				if(Date.now()-this.lastRotate<75 && !(/Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent)) ) return;
 		if (!(gameState === 1 || gameState === 0)) return;
@@ -133,7 +172,13 @@ function Hex(sideLength) {
 		this.targetAngle = this.targetAngle - steps * 60;
 				this.lastRotate = Date.now();
 	};
-
+/**
+* Работа с Hex
+*
+* Отрисовываем блок и повороты и тд
+* 
+* @return Hex Возвращает блок
+*/
 	this.draw = function() {
 		this.x = trueCanvas.width/2;
 
@@ -164,7 +209,14 @@ function Hex(sideLength) {
 		drawPolygon(this.x + gdx, this.y + gdy + this.dy, this.sides, this.sideLength, this.angle,arrayToColor(this.fillColor) , 0, 'rgba(0,0,0,0)');
 	};
 }
-
+/**
+* Работа с цветом
+*
+* Переводим массив ргб в цвет
+* 
+* @param array $arr массив rgb
+* @return string Цвет
+*/
 function arrayToColor(arr){
 	return 'rgb(' + arr[0]+ ','+arr[1]+','+arr[2]+')';
 }
